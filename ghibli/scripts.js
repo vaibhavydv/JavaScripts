@@ -1,12 +1,12 @@
 const app = document.getElementById('root');
 
 const logo = document.createElement('img');
-logo.src = 'logo.png';
+//logo.src = 'logo.png';
 
 const container = document.createElement('div');
 container.setAttribute('class', 'container');
 
-app.appendChild(logo);
+//app.appendChild(logo);
 app.appendChild(container);
 
 var request = new XMLHttpRequest();
@@ -23,6 +23,7 @@ request.onload = function () {
       const h1 = document.createElement('h1');
       h1.textContent = movie.title;
 
+
       const p = document.createElement('p');
       movie.description = movie.description.substring(0, 300);
       p.textContent = `${movie.description}...`;
@@ -30,6 +31,8 @@ request.onload = function () {
       container.appendChild(card);
       card.appendChild(h1);
       card.appendChild(p);
+      console.log(movie.title);
+      console.log(movie.description);
     });
   } else {
     const errorMessage = document.createElement('marquee');
